@@ -1,0 +1,32 @@
+from scrapy.linkextractors import LinkExtractor
+from scrapy.spiders import CrawlSpider, Rule
+from .. import items
+import logging
+
+logger = logging.getLogger('mycustomlogger')  # 用python 的logging,這行為log取名
+
+class MySpider(CrawlSpider):
+    name = "recurison"
+    allowed_domains = ["news.pts.org.tw", "www.don1don.com", "www.everydayobject.us", "www.ettoday.net/dalemon", "www.dramaqueen.com.tw", "applianceinsight.com.tw", "easylife.tw", "e-creative.media", "ahui3c.com", "anntw.com"]
+    custom_settings = {
+        'DOWNLOADER_MIDDLEWARES':{'scrapy_recursion.middlewares.PerStartUrlTimeoutMiddleware': 543},
+        'ITEM_PIPELINES': {"scrapy_recursion.pipelines.LinksPipeline": 500},
+        'START_URL_TIMEOUT': 3600, 
+    }
+    rules = [
+        Rule(LinkExtractor(), callback="parse_page", follow=True)
+    ]
+    count = 0
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.url = kwargs.get("url")
+        self.start_urls = [self.url]
+
+    def parse_page(self, response):
+        links = LinkExtractor().extract_links(response)
+        for link in links:
+            self.count += 1
+            item = items.urlItem()
+            item["url"] = link.url
+            yield item
