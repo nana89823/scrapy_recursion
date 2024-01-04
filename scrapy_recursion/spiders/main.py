@@ -7,7 +7,7 @@ logger = logging.getLogger('mycustomlogger')  # 用python 的logging,這行為lo
 
 class MySpider(CrawlSpider):
     name = "recurison"
-    allowed_domains = ["news.pts.org.tw", "www.don1don.com", "www.everydayobject.us", "www.ettoday.net/dalemon", "www.dramaqueen.com.tw", "applianceinsight.com.tw", "easylife.tw", "e-creative.media", "ahui3c.com", "anntw.com"]
+    allowed_domains = ["news.pts.org.tw", "www.don1don.com", "www.everydayobject.us", "www.ettoday.net", "www.dramaqueen.com.tw", "applianceinsight.com.tw", "easylife.tw", "e-creative.media", "ahui3c.com", "anntw.com", "www.ltn.com.tw"]
     custom_settings = {
         'DOWNLOADER_MIDDLEWARES':{'scrapy_recursion.middlewares.PerStartUrlTimeoutMiddleware': 543},
         'ITEM_PIPELINES': {"scrapy_recursion.pipelines.LinksPipeline": 500},

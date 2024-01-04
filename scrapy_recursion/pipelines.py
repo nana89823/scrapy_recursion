@@ -26,7 +26,7 @@ class LinksPipeline:
 
     def process_item(self, item, spider):
         if item["url"] not in self.visited_urls:
-            if urlparse(item["url"]).netloc == urlparse("".join(spider.start_urls)).netloc:
+            if tldextract.extract(item["url"]).domain == tldextract.extract("".join(spider.start_urls)).domain:
                 self.visited_urls.add(item["url"])  # 將新 URL 添加到集合中
                 self.file.write(item["url"] + '\n')  # 將 URL 寫入文件
         return item

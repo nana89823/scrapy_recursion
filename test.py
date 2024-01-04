@@ -7,10 +7,11 @@ urls = [
     "https://www.ettoday.net/dalemon",
     "https://www.dramaqueen.com.tw/",
     "https://applianceinsight.com.tw/",
-    "https://easylife.tw/",
+    "https://blog.easylife.tw/",
     "https://e-creative.media/",
     "https://ahui3c.com",
     "https://anntw.com",
+    "https://www.ltn.com.tw/",
 ]
 
 for url in urls:
