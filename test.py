@@ -1,17 +1,23 @@
 import subprocess
 
 urls = [
-    "https://www.don1don.com/",
-    "https://news.pts.org.tw/",
-    "https://www.everydayobject.us/",
-    "https://www.ettoday.net/dalemon",
-    "https://www.dramaqueen.com.tw/",
-    "https://applianceinsight.com.tw/",
-    "https://blog.easylife.tw/",
-    "https://e-creative.media/",
-    "https://ahui3c.com",
-    "https://anntw.com",
-    "https://www.ltn.com.tw/",
+    "https://www.businesstoday.com.tw/",
+    "https://www.businessweekly.com.tw/",
+    "https://csr.cw.com.tw/",
+    "https://news.cts.com.tw/",
+    "https://www.msn.com/zh-tw",
+    "https://www.mirrormedia.mg/",
+    # "https://www.don1don.com/",  # 無每天發文
+    # "https://news.pts.org.tw/",
+    # "https://www.everydayobject.us/",  # 無每天發文
+    # "https://www.ettoday.net/dalemon",
+    # "https://www.dramaqueen.com.tw/",
+    # "https://applianceinsight.com.tw/",  # 無每天發文
+    # "https://blog.easylife.tw/",
+    # "https://e-creative.media/",
+    # "https://ahui3c.com",  # 無每天發文
+    # "https://anntw.com",
+    # "https://www.ltn.com.tw/",
 ]
 
 for url in urls:
