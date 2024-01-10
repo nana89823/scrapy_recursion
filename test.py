@@ -23,7 +23,7 @@ urls = [
 
 for url in urls:
     try:
-        cmd = f"scrapy crawl recurison -a url={url} -L DEBUG >/dev/null 2>&1 &"
+        cmd = f"scrapy crawl recursion -a url={url} -L DEBUG >/dev/null 2>&1 &"
         completed_process = subprocess.run(cmd, shell=True, check=True, stderr=True)
         time.sleep(3600)
         print(f"命令 '{cmd}' 执行成功: {completed_process}")
