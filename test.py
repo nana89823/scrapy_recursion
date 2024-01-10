@@ -3,9 +3,9 @@ import subprocess
 urls = [
     "https://www.businesstoday.com.tw/",
     "https://www.businessweekly.com.tw/",
-    "https://csr.cw.com.tw/",
+    #"https://csr.cw.com.tw/",
     "https://news.cts.com.tw/",
-    "https://www.msn.com/zh-tw",
+    #"https://www.msn.com/zh-tw",
     "https://www.mirrormedia.mg/",
     # "https://www.don1don.com/",  # 無每天發文
     # "https://news.pts.org.tw/",

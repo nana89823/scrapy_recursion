@@ -7,7 +7,7 @@ logger = logging.getLogger("mycustomlogger")  # 用python 的logging,這行為lo
 
 
 class MySpider(CrawlSpider):
-    name = "recurison"
+    name = "recursion"
     allowed_domains = [
         "news.pts.org.tw",
         "www.don1don.com",
