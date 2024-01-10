@@ -1,4 +1,5 @@
 import subprocess
+import time
 
 urls = [
     "https://www.businesstoday.com.tw/",
@@ -24,6 +25,7 @@ for url in urls:
     try:
         cmd = f"scrapy crawl recurison -a url={url} -L DEBUG >/dev/null 2>&1 &"
         completed_process = subprocess.run(cmd, shell=True, check=True, stderr=True)
+        time.sleep(3600)
         print(f"命令 '{cmd}' 执行成功: {completed_process}")
     except subprocess.CalledProcessError as e:
         print(f"命令 '{cmd}' 执行失败: {e}")
