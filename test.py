@@ -2,12 +2,12 @@ import subprocess
 import time
 
 urls = [
-    "https://www.businesstoday.com.tw/",
-    "https://www.businessweekly.com.tw/",
-    #"https://csr.cw.com.tw/",
-    "https://news.cts.com.tw/",
-    #"https://www.msn.com/zh-tw",
-    "https://www.mirrormedia.mg/",
+    # "https://www.businesstoday.com.tw/",
+    # "https://www.businessweekly.com.tw/",
+    # "https://csr.cw.com.tw/",
+    # "https://news.cts.com.tw/",
+    # "https://www.msn.com/zh-tw",
+    # "https://www.mirrormedia.mg/",
     # "https://www.don1don.com/",  # 無每天發文
     # "https://news.pts.org.tw/",
     # "https://www.everydayobject.us/",  # 無每天發文
@@ -19,6 +19,11 @@ urls = [
     # "https://ahui3c.com",  # 無每天發文
     # "https://anntw.com",
     # "https://www.ltn.com.tw/",
+    "https://www.cna.com.tw/postwrite"  # cnamsg
+    "https://cnews.com.tw"  # cnews
+    "https://www.coolloud.org.tw"  # cool
+    "https://www.cool3c.com"  # cool3c
+    "https://www.cool-style.com.tw/wd2/"  # cools  在網站上看不到頁數，但有在html裡，剛好測試
 ]
 
 for url in urls:
