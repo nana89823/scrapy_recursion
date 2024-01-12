@@ -62,9 +62,9 @@ class MySpider(CrawlSpider):
             if parsed_href.netloc:
                 if not parsed_href.scheme:
                     continue
-                if parsed_href.netloc != urlparse(link).netloc:
+                if parsed_href.netloc != urlparse(response.url).netloc:
                     continue
             else:
-                href = urljoin(link, href)
+                href = urljoin(response.url, href)
             item["url"] = href
             yield item
