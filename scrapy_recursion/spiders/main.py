@@ -1,6 +1,7 @@
 from scrapy.linkextractors import LinkExtractor
 from scrapy.spiders import CrawlSpider, Rule
 from .. import items
+from urllib.parse import urlparse, urljoin
 import logging
 
 logger = logging.getLogger("mycustomlogger")  # 用python 的logging,這行為log取名
@@ -47,5 +48,18 @@ class MySpider(CrawlSpider):
         for link in links:
             self.count += 1
             item = items.urlItem()
-            item["url"] = link.url
+            # item["url"] = link.url
+            href = link.url.split("#")[0].lower().rstrip("/")
+            try:
+                parsed_href = urlparse(href)
+            except Exception:
+                continue
+            if parsed_href.netloc:
+                if not parsed_href.scheme:
+                    continue
+                if parsed_href.netloc != urlparse(link).netloc:
+                    continue
+            else:
+                href = urljoin(link, href)
+            item["url"] = href
             yield item

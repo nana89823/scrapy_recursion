@@ -6,6 +6,7 @@
 
 # useful for handling different item types with a single interface
 import tldextract
+from datetime import datetime
 from urllib.parse import urlparse
 
 
@@ -19,7 +20,8 @@ class LinksPipeline:
         self.visited_urls = set()
         start_url = "".join(spider.start_urls)
         domain = tldextract.extract(start_url).domain
-        self.file = open(f'{domain}_uniqueLinks.txt', 'w', encoding='utf-8')
+        date = "".join(str(datetime.now().date()).split('-')[1:])
+        self.file = open(f'{domain}_uniqueLinks_{date}.txt', 'w', encoding='utf-8')
 
     def close_spider(self, spider):
         self.file.close()
