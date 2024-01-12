@@ -26,7 +26,12 @@ class MySpider(CrawlSpider):
         "csr.cw.com.tw",
         "news.cts.com.tw",
         "www.msn.com",
-        "www.mirrormedia.mg"
+        "www.mirrormedia.mg",
+        "www.cna.com.tw",
+        "cnews.com.tw",
+        "www.coolloud.org.tw",
+        "www.cool3c.com",
+        "www.cool-style.com.tw/wd2/",
     ]
     custom_settings = {
         "DOWNLOADER_MIDDLEWARES": {
