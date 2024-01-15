@@ -19,11 +19,15 @@ urls = [
     # "https://ahui3c.com",  # 無每天發文
     # "https://anntw.com",
     # "https://www.ltn.com.tw/",
-    "https://www.cna.com.tw/postwrite",  # cnamsg
-    "https://cnews.com.tw",  # cnews
-    "https://www.coolloud.org.tw",  # cool
-    "https://www.cool3c.com",  # cool3c
+    # "https://www.cna.com.tw/postwrite",  # cnamsg
+    # "https://cnews.com.tw",  # cnews
+    # "https://www.coolloud.org.tw",  # cool
+    # "https://www.cool3c.com",  # cool3c
     "https://www.cool-style.com.tw/wd2/",  # cools  在網站上看不到頁數，但有在html裡，剛好測試
+    "https://dailyview.tw",  # dailyview
+    "https://www.thenewslens.com/",  # tnl
+    "https://www.twreporter.org/",  # tr
+    "https://news.ttv.com.tw/",  # ttv
 ]
 
 for url in urls:

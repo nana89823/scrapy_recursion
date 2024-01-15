@@ -31,7 +31,11 @@ class MySpider(CrawlSpider):
         "cnews.com.tw",
         "www.coolloud.org.tw",
         "www.cool3c.com",
-        "www.cool-style.com.tw/wd2/",
+        "www.cool-style.com.tw",
+        "dailyview.tw",
+        "www.thenewslens.com",
+        "www.twreporter.org",
+        "news.ttv.com.tw"
     ]
     custom_settings = {
         "DOWNLOADER_MIDDLEWARES": {
