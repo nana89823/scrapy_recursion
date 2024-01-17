@@ -35,7 +35,12 @@ class MySpider(CrawlSpider):
         "dailyview.tw",
         "www.thenewslens.com",
         "www.twreporter.org",
-        "news.ttv.com.tw"
+        "news.ttv.com.tw",
+        "fongnews.net",
+        "www.fiftyplus.com.tw",
+        "fgblog.fashionguide.com.tw",
+        "findnewstoday.net",
+        "flipermag.com",
     ]
     custom_settings = {
         "DOWNLOADER_MIDDLEWARES": {

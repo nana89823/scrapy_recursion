@@ -1,3 +1,4 @@
+"""Test."""
 import subprocess
 import time
 
@@ -23,11 +24,16 @@ urls = [
     # "https://cnews.com.tw",  # cnews
     # "https://www.coolloud.org.tw",  # cool
     # "https://www.cool3c.com",  # cool3c
-    "https://www.cool-style.com.tw/wd2/",  # cools  在網站上看不到頁數，但有在html裡，剛好測試
-    "https://dailyview.tw",  # dailyview
-    "https://www.thenewslens.com/",  # tnl
-    "https://www.twreporter.org/",  # tr
-    "https://news.ttv.com.tw/",  # ttv
+    # "https://www.cool-style.com.tw/wd2/",  # cools  在網站上看不到頁數，但有在html裡，剛好測試
+    # "https://dailyview.tw",  # dailyview
+    # "https://www.thenewslens.com/",  # tnl
+    # "https://www.twreporter.org/",  # tr
+    # "https://news.ttv.com.tw/",  # ttv
+    "https://fongnews.net/",   # fong
+    "https://www.fiftyplus.com.tw/",  # fifty
+    "https://fgblog.fashionguide.com.tw/content/",  # fgnews
+    "https://findnewstoday.net/",  # findnewstoday
+    "https://flipermag.com/",  # flipm
 ]
 
 for url in urls:
