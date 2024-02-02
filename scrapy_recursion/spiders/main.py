@@ -1,3 +1,4 @@
+"""Main."""
 from scrapy.linkextractors import LinkExtractor
 from scrapy.spiders import CrawlSpider, Rule
 from .. import items
@@ -8,6 +9,8 @@ logger = logging.getLogger("mycustomlogger")  # 用python 的logging,這行為lo
 
 
 class MySpider(CrawlSpider):
+    """MySpiser."""
+
     name = "recursion"
     allowed_domains = [
         "news.pts.org.tw",
@@ -41,23 +44,30 @@ class MySpider(CrawlSpider):
         "fgblog.fashionguide.com.tw",
         "findnewstoday.net",
         "flipermag.com",
+        "news.ebc.net.tw",
+        "www.storm.mg",
+        "udn.com",
     ]
     custom_settings = {
         "DOWNLOADER_MIDDLEWARES": {
             "scrapy_recursion.middlewares.PerStartUrlTimeoutMiddleware": 543
         },
         "ITEM_PIPELINES": {"scrapy_recursion.pipelines.LinksPipeline": 500},
-        "START_URL_TIMEOUT": 3600,
+        "START_URL_TIMEOUT": 600,
     }
     rules = [Rule(LinkExtractor(), callback="parse_page", follow=True)]
     count = 0
 
     def __init__(self, *args, **kwargs):
+        """init."""
         super().__init__(*args, **kwargs)
         self.url = kwargs.get("url")
+        self.fid = kwargs.get("fid")
+        self.time_ = kwargs.get("time")
         self.start_urls = [self.url]
 
     def parse_page(self, response):
+        """parse_page."""
         links = LinkExtractor().extract_links(response)
         for link in links:
             self.count += 1
@@ -75,5 +85,5 @@ class MySpider(CrawlSpider):
                     continue
             else:
                 href = urljoin(response.url, href)
-            item["url"] = href
+            item["url"] = href.split("?")[0]
             yield item
